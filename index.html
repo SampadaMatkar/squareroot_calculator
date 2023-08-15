@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Square Root Calculator</title>
+<style>
+	*{font-size:40px; font-family:Impact ;}
+	body{background-color: lightyellow;}
+</style>
+<script>
+	function check()
+	{
+	event.preventDefault();
+	let num = document.getElementById("num");
+	let ans = document.getElementById("ans");
+	if(num.value =="")
+	{
+		alert("You did not enter an integer");
+		ans.innerHTML = "";
+		num.focus();
+		return;
+	}
+	else if (num.value<0){alert("enter any positive number :");}
+	let n= parseInt(num.value);
+	let r = (n**0.5).toFixed(2)
+	ans.innerHTML = "Square root of "+ n +" is " +r;
+	}
+</script>
+</head>
+<body>
+<center>
+	<h1> Square Root Finder </h1>
+	<form onsubmit="check()">
+	<input type="number" step ="any" id="num" placeholder="enter number">
+	</input>
+	<br><br>
+	<input type ="submit" value ="Find Square root"> </input>
+	</form>
+	<h1 id ="ans"></h1>	
+</center>
+</body>
+</html>
